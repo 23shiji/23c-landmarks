@@ -1,0 +1,8 @@
+- planet: yipolis
+  desc_dir: ../yining-map/map/locations/descriptions
+  desc_pub: map/locations/descriptions
+  index_file: ../yining-map/map/locations/index.yaml
+- planet: mars
+  desc_dir: ../mars-map/map/locations/descriptions
+  desc_pub: map/locations/descriptions
+  index_file: ../mars-map/map/locations/index.yaml

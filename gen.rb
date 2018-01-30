@@ -15,7 +15,13 @@ YAML.load_file($planet_file).each do |planet_info|
   $index_file     = planet_info['index_file']
   $desc_dir       = planet_info['desc_dir']
   $desc_pub       = planet_info['desc_pub']
-  indices = YAML.load_file $index_file  
+  
+  if File.exists?($index_file)
+    indices = YAML.load_file $index_file
+  else
+    puts "Ignore: #{$index_file}"
+    next
+  end
   
   Dir[$src_dir+"/**/*.ymd"].each do |f|
     meta, desc = YAML.load_stream File.open(f, "r:bom|utf-8"){|f| f.read}

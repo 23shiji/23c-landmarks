@@ -17,7 +17,7 @@ YAML.load_file($planet_file).each do |planet_info|
   $desc_pub       = planet_info['desc_pub']
   indices = YAML.load_file $index_file  
   
-  Dir[$src_dir+"/*.ymd"].each do |f|
+  Dir[$src_dir+"/**/*.ymd"].each do |f|
     meta, desc = YAML.load_stream File.open(f, "r:bom|utf-8"){|f| f.read}
     next if $planet != meta['planet']
     alt = indices.detect{|x| x['name'] == meta['title']}
